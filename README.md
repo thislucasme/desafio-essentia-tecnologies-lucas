@@ -1,5 +1,7 @@
 # Desafio Técnico — Essentia Technologies
 
+> **Nota:** O projeto teve maior foco na arquitetura, backend, segurança e integração da aplicação. O frontend foi desenvolvido priorizando funcionalidade e responsividade, sem um foco aprofundado em UI/UX.
+
 ## Aplicação de Gerenciamento de Tarefas
 O projeto consiste em um sistema de gerenciamento de tarefas com autenticação de usuários, permitindo que cada usuário cadastre, visualize, edite e exclua suas próprias tarefas.
 
