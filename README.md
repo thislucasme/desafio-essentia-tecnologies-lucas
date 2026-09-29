@@ -152,12 +152,6 @@ As chaves podem ser criadas no painel do Cloudflare Turnstile:
 
 https://dash.cloudflare.com/?to=/:account/turnstile
 
-Ao criar o widget para desenvolvimento, adicione `localhost` como hostname permitido.
-
-Também é possível utilizar as chaves de teste oficiais do Cloudflare para desenvolvimento local:
-
-https://developers.cloudflare.com/turnstile/troubleshooting/testing/
-
 A Site Key deve ser configurada em:
 
 `src/environments/environment.development.ts`
