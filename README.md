@@ -1,4 +1,4 @@
-# Desafio Técnico — Essentia Technologies
+# Desafio Técnico | Essentia Technologies
 
 > **Nota:** O projeto teve maior foco na arquitetura, backend, segurança e integração da aplicação. O frontend foi desenvolvido priorizando funcionalidade e responsividade, sem um foco aprofundado em UI/UX.
 
