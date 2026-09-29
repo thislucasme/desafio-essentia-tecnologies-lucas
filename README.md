@@ -1,4 +1,3 @@
-```md
 # Desafio Técnico | Essentia Technologies
 
 > **Nota:** O projeto teve maior foco na arquitetura, backend, segurança e integração da aplicação. O frontend foi desenvolvido priorizando funcionalidade e responsividade, sem um foco aprofundado em UI/UX.
@@ -128,9 +127,7 @@ TURNSTILE_SECRET_KEY=SUA_SECRET_KEY
 
 No arquivo:
 
-```text
-src/environments/environment.development.ts
-```
+`src/environments/environment.development.ts`
 
 Configure:
 
@@ -142,9 +139,42 @@ export const environment = {
 };
 ```
 
-Para utilizar o Cloudflare Turnstile localmente, configure uma chave válida para `localhost` ou utilize as chaves de teste disponibilizadas pela Cloudflare.
+### 5. Configure o Cloudflare Turnstile
 
-### 5. Inicie o banco de dados
+O projeto utiliza o **Cloudflare Turnstile** no cadastro e no login para proteção contra requisições automatizadas.
+
+Para executar o projeto localmente, é necessário configurar:
+
+- **Site Key:** utilizada pelo frontend.
+- **Secret Key:** utilizada pelo backend para validar o token gerado pelo Turnstile.
+
+As chaves podem ser criadas no painel do Cloudflare Turnstile:
+
+https://dash.cloudflare.com/?to=/:account/turnstile
+
+Ao criar o widget para desenvolvimento, adicione `localhost` como hostname permitido.
+
+Também é possível utilizar as chaves de teste oficiais do Cloudflare para desenvolvimento local:
+
+https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+
+A Site Key deve ser configurada em:
+
+`src/environments/environment.development.ts`
+
+```typescript
+turnstileSiteKey: 'SUA_SITE_KEY'
+```
+
+A Secret Key deve ser configurada no arquivo `backend/.env`:
+
+```env
+TURNSTILE_SECRET_KEY=SUA_SECRET_KEY
+```
+
+> A Secret Key deve permanecer somente no backend e não deve ser adicionada ao código do frontend ou enviada ao repositório.
+
+### 6. Inicie o banco de dados
 
 Na pasta `backend`:
 
@@ -152,7 +182,7 @@ Na pasta `backend`:
 docker compose up -d
 ```
 
-### 6. Inicie o backend
+### 7. Inicie o backend
 
 Ainda na pasta `backend`:
 
@@ -162,17 +192,13 @@ npm run start:dev
 
 A API estará disponível em:
 
-```text
-http://localhost:3008/api
-```
+`http://localhost:3008/api`
 
 A documentação Swagger estará disponível em:
 
-```text
-http://localhost:3008/api/docs
-```
+`http://localhost:3008/api/docs`
 
-### 7. Inicie o frontend
+### 8. Inicie o frontend
 
 Em outro terminal, na raiz do projeto:
 
@@ -182,13 +208,8 @@ npm start
 
 A aplicação estará disponível em:
 
-```text
-http://localhost:4200
-```
+`http://localhost:4200`
 
 ## Código-fonte
 
 https://github.com/thislucasme/desafio-essentia-tecnologies-lucas
-```
-
-Mantive a apresentação, tecnologias, funcionalidades, deploy e arquitetura que você queria, mas reduzi a execução local ao fluxo necessário. Isso elimina boa parte do excesso do README anterior, que chegava a ter seções separadas para testes, logs, portas, CORS, 401, Swagger etc.
